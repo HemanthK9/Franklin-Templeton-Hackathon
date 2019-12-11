@@ -1,0 +1,31 @@
+{
+	"sql": "SELECT * from prices",
+	"columns": ["as_of_date", "cusip", "ticker", "high", "low", "open", "close"],
+	"filters": [			
+		{
+			"operator": "AND",
+			"filters": [					
+				{
+					"operator": "BETWEEN",
+					"column": "as_of_date",
+					"params": ["start_date", "end_date"]
+				},				
+				{
+					"operator": "OR",
+					"filters": [
+						{
+							"operator": "IN",
+							"column": "cusip",
+							"params": ["cusips"]
+						},				
+						{
+							"operator": "IN",
+							"column": "ticker",
+							"params": ["tickers"]
+						}
+					]
+				}
+			]
+		}
+	]
+}

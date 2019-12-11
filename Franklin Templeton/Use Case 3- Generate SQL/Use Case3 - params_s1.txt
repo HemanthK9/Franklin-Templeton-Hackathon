@@ -1,0 +1,4 @@
+start_date : 2019-01-01
+end_date : 2019-01-31
+cusips : 594918104,354613101,037833100
+tickers : AAPL,MSFT,BEN
